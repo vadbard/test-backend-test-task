@@ -3,11 +3,10 @@
 namespace App\Service\Price;
 
 use App\Entity\Coupon;
-use App\Enum\CouponTypeEnum;
 use App\Service\Tax\TaxInterface;
 use App\Value\Money;
 
-final class Price
+class Price
 {
     private Coupon $coupon;
 
@@ -17,17 +16,14 @@ final class Price
 
     public function __construct(private readonly Money $money)
     {
-        $this->resultMoney = $this->money;
     }
 
     public function getMoney(): Money
     {
+        $this->resultMoney = $this->money;
+
         if (isset($this->coupon) || isset($this->tax)) {
-            if (! isset($this->resultMoney)) {
-                $this->calculatePrice();
-            }
-        } else {
-            $this->resultMoney = $this->money;
+            $this->calculatePrice();
         }
 
         return $this->resultMoney;
@@ -61,7 +57,7 @@ final class Price
 
         $discountMoney = $this->coupon->getDiscountCalculator()->calculateDiscount($this->money);
 
-        $value = $this->money->amount - $discountMoney->amount;
+        $value = $this->resultMoney->amount - $discountMoney->amount;
 
         $this->resultMoney = new Money(max($value, 0));
     }
@@ -78,7 +74,7 @@ final class Price
 
         $taxMoney = $this->tax->calculateTax($this->money);
 
-        $value = $this->money->amount + $taxMoney->amount;
+        $value = $this->resultMoney->amount + $taxMoney->amount;
 
         $this->resultMoney = new Money($value);
     }

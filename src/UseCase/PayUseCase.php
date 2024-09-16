@@ -3,7 +3,7 @@
 namespace App\UseCase;
 
 use App\Enum\PaymentProcessorEnum;
-use App\Exception\UseCase\PurchaseUseCaseException;
+use App\Exception\UseCase\PurchasePaymentGatewayException;
 use App\Service\Payment\PaymentGatewayInterface;
 use App\Service\Payment\PaypalGateway;
 use App\Service\Payment\StripeGateway;
@@ -25,7 +25,7 @@ final class PayUseCase
         try {
             $gateway->pay($price);
         } catch (\Exception $e) {
-            throw new PurchaseUseCaseException('Payment error. Details: ' . $e->getMessage());
+            throw new PurchasePaymentGatewayException('Payment error. Details: ' . $e->getMessage());
         }
     }
 
@@ -35,7 +35,7 @@ final class PayUseCase
         $processorEnum = PaymentProcessorEnum::tryFrom($processorString);
 
         if (is_null($processorEnum)) {
-            throw new PurchaseUseCaseException("Payment processor not found by code $processorString");
+            throw new PurchasePaymentGatewayException("Payment processor not found by code $processorString");
         }
 
         return match ($processorEnum) {

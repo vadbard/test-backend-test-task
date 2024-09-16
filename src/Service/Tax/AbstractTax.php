@@ -8,6 +8,6 @@ class AbstractTax implements TaxInterface
 {
     public function calculateTax(Money $money): Money
     {
-        return new Money($this::RATE_PERCENT * 100 / $money->amount);
+        return new Money($this::RATE_PERCENT / 100 * $money->amount);
     }
 }

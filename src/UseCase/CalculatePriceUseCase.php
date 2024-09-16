@@ -4,7 +4,7 @@ namespace App\UseCase;
 
 use App\Entity\Coupon;
 use App\Entity\Product;
-use App\Exception\UseCase\CalculatePriceUseCaseException;
+use App\Exception\UseCase\PaypalGatewayException;
 use App\Repository\CouponRepository;
 use App\Repository\ProductRepository;
 use App\Service\Price\Price;
@@ -37,7 +37,7 @@ final class CalculatePriceUseCase
         $product = $this->productRepository->find($productId);
 
         if (is_null($product)) {
-            throw new CalculatePriceUseCaseException("Product not found by id $productId");
+            throw new PaypalGatewayException("Product not found by id $productId");
         }
 
         return $product;
@@ -48,7 +48,7 @@ final class CalculatePriceUseCase
         try {
             $this->taxFactory->make($taxNumber);
         } catch (\Exception $e) {
-            throw new CalculatePriceUseCaseException("Tax not found by number $taxNumber");
+            throw new PaypalGatewayException("Tax not found by number $taxNumber");
         }
     }
 
@@ -61,7 +61,7 @@ final class CalculatePriceUseCase
         $coupon = $this->couponRepository->findByCode($couponCode);
 
         if (is_null($coupon)) {
-            throw new CalculatePriceUseCaseException("Coupon not found by code $couponCode");
+            throw new PaypalGatewayException("Coupon not found by code $couponCode");
         }
 
         return $coupon;

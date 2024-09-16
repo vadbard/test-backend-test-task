@@ -70,9 +70,9 @@ class Coupon
     public function getDiscountCalculator(): DiscountCalculatorInterface
     {
         if ($this->type === CouponTypeEnum::DiscountPercent) {
-            return new PercentDiscountCalculator($this);
+            return new PercentDiscountCalculator($this->value);
         } elseif ($this->type === CouponTypeEnum::DiscountAmount) {
-            return new AmountDiscountCalculator($this);
+            return new AmountDiscountCalculator($this->value);
         }
 
         throw new \Exception('Unknown coupon type');
