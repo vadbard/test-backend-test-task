@@ -2,7 +2,7 @@
 
 namespace App\Service\Payment;
 
-use App\Exception\Service\Payment\PaypalGatewayException;
+use App\Exception\Service\Tax\TaxFactoryException;
 use App\Service\Price\Price;
 use Systemeio\TestForCandidates\PaymentProcessor\PaypalPaymentProcessor;
 
@@ -19,7 +19,7 @@ final readonly class PaypalGateway implements PaymentGatewayInterface
         try {
             $this->paypalPaymentProcessor->pay($price->getMoney()->amount);
         } catch (\Exception $e) {
-            throw new PaypalGatewayException('Paypal payment failed');
+            throw new TaxFactoryException('Paypal payment failed');
         }
     }
 }

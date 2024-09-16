@@ -2,7 +2,7 @@
 
 namespace App\Tests\Service\Payment;
 
-use App\Exception\Service\Payment\PaypalGatewayException;
+use App\Exception\Service\Tax\TaxFactoryException;
 use App\Service\Payment\PaypalGateway;
 use App\Service\Price\Price;
 use App\Value\Money;
@@ -49,7 +49,7 @@ class PaypalGatewayTest extends TestCase
         $this->paypalPaymentProcessor->method('pay')
             ->will($this->throwException(new \Exception()));
 
-        $this->expectException(PaypalGatewayException::class);
+        $this->expectException(TaxFactoryException::class);
 
         $this->paypalGateway->pay($price);
     }

@@ -2,19 +2,19 @@
 
 namespace App\Service\Tax;
 
-use App\Value\Money;
+use App\Exception\Service\Tax\TaxFactoryException;
 
 class TaxFactory extends AbstractTax
 {
     public function make(string $taxNumber): TaxInterface
     {
         foreach ($this->getTaxes() as $tax) {
-            if (preg_match($taxNumber, $tax::REGEX) !== false) {
+            if (preg_match($tax::REGEX, $taxNumber) === 1) {
                 return $tax;
             }
         }
 
-        throw new \Exception('Tax not found');
+        throw new TaxFactoryException('Tax not found');
     }
 
     /**
