@@ -24,7 +24,10 @@ stop: ## Stop services.
 start: ## Start services.
 	${DC} start $(c)
 
-down: ## Stop and remove containers and volumes.
+down: ## Stop and remove containers.
+	${DC} down $(c)
+
+down-v: ## Stop and remove containers and volumes.
 	${DC} down -v $(c)
 
 restart: stop start ## Restart services.

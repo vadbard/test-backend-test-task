@@ -12,7 +12,6 @@ services:
         environment:
             - APP_ENV=dev
 
-
     database:
         image: postgres:${POSTGRES_VERSION:-16}-alpine
         environment:
@@ -21,6 +20,8 @@ services:
             POSTGRES_USER: ${POSTGRES_USER:-app}
         volumes:
           - database_data:/var/lib/postgresql/data:rw
+        ports:
+            - "5432:5432"
 
 volumes:
   database_data:
