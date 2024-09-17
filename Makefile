@@ -41,3 +41,6 @@ install: ## Install dependencies without running the whole application.
 success-message:
 	@echo "You can now access the application at http://localhost:8337"
 	@echo "Good luck! 🚀"
+
+test: ## Run tests.
+	SYMFONY_DEPRECATIONS_HELPER='baselineFile=./tests/allowed.json' APP_ENV=test ./vendor/bin/simple-phpunit

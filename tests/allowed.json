@@ -1,0 +1,62 @@
+[
+    {
+        "location": "Zenstruck\\Foundry\\Persistence\\PersistentObjectFactory",
+        "message": "The \"Zenstruck\\Foundry\\ObjectFactory::create()\" method is considered final. It may change without further notice as of its next major version. You should not extend it from \"Zenstruck\\Foundry\\Persistence\\PersistentObjectFactory\".",
+        "count": 1
+    },
+    {
+        "location": "Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory",
+        "message": "The \"Zenstruck\\Foundry\\Persistence\\PersistentObjectFactory::find()\" method is considered final. It may change without further notice as of its next major version. You should not extend it from \"Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory\".",
+        "count": 1
+    },
+    {
+        "location": "Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory",
+        "message": "The \"Zenstruck\\Foundry\\Persistence\\PersistentObjectFactory::findOrCreate()\" method is considered final. It may change without further notice as of its next major version. You should not extend it from \"Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory\".",
+        "count": 1
+    },
+    {
+        "location": "Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory",
+        "message": "The \"Zenstruck\\Foundry\\Persistence\\PersistentObjectFactory::randomOrCreate()\" method is considered final. It may change without further notice as of its next major version. You should not extend it from \"Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory\".",
+        "count": 1
+    },
+    {
+        "location": "Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory",
+        "message": "The \"Zenstruck\\Foundry\\Persistence\\PersistentObjectFactory::randomSet()\" method is considered final. It may change without further notice as of its next major version. You should not extend it from \"Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory\".",
+        "count": 1
+    },
+    {
+        "location": "Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory",
+        "message": "The \"Zenstruck\\Foundry\\Persistence\\PersistentObjectFactory::randomRange()\" method is considered final. It may change without further notice as of its next major version. You should not extend it from \"Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory\".",
+        "count": 1
+    },
+    {
+        "location": "Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory",
+        "message": "The \"Zenstruck\\Foundry\\Persistence\\PersistentObjectFactory::findBy()\" method is considered final. It may change without further notice as of its next major version. You should not extend it from \"Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory\".",
+        "count": 1
+    },
+    {
+        "location": "Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory",
+        "message": "The \"Zenstruck\\Foundry\\Persistence\\PersistentObjectFactory::random()\" method is considered final. It may change without further notice as of its next major version. You should not extend it from \"Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory\".",
+        "count": 1
+    },
+    {
+        "location": "Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory",
+        "message": "The \"Zenstruck\\Foundry\\Persistence\\PersistentObjectFactory::first()\" method is considered final. It may change without further notice as of its next major version. You should not extend it from \"Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory\".",
+        "count": 1
+    },
+    {
+        "location": "Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory",
+        "message": "The \"Zenstruck\\Foundry\\Persistence\\PersistentObjectFactory::last()\" method is considered final. It may change without further notice as of its next major version. You should not extend it from \"Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory\".",
+        "count": 1
+    },
+    {
+        "location": "Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory",
+        "message": "The \"Zenstruck\\Foundry\\Persistence\\PersistentObjectFactory::all()\" method is considered final. It may change without further notice as of its next major version. You should not extend it from \"Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory\".",
+        "count": 1
+    },
+    {
+        "location": "Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory",
+        "message": "The \"Zenstruck\\Foundry\\Persistence\\PersistentObjectFactory::repository()\" method is considered final. It may change without further notice as of its next major version. You should not extend it from \"Zenstruck\\Foundry\\Persistence\\PersistentProxyObjectFactory\".",
+        "count": 1
+    }
+]
