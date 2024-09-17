@@ -10,4 +10,14 @@ class AbstractTax implements TaxInterface
     {
         return new Money($this::RATE_PERCENT / 100 * $money->amount);
     }
+
+    public function getRegexPattern(): string
+    {
+        return $this::REGEX;
+    }
+
+    public function getName(): string
+    {
+        return $this::NAME;
+    }
 }

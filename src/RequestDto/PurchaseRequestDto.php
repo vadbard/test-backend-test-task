@@ -2,11 +2,8 @@
 
 namespace App\RequestDto;
 
-use App\Enum\PaymentProcessorEnum;
-use App\Service\Tax\FranceTax;
-use App\Service\Tax\GermanyTax;
-use App\Service\Tax\GreeceTax;
-use App\Service\Tax\ItalyTax;
+use App\Validator\PaymentProcessorCode;
+use App\Validator\TaxNumber;
 use Symfony\Component\Validator\Constraints as Assert;
 
 readonly class PurchaseRequestDto
@@ -15,23 +12,16 @@ readonly class PurchaseRequestDto
         #[Assert\NotBlank]
         #[Assert\Type('int')]
         #[Assert\Positive]
-        public string $product,
+        public int $product,
 
         #[Assert\NotBlank]
         #[Assert\Type('string')]
-        #[Assert\AtLeastOneOf([
-            new Assert\Regex(FranceTax::REGEX),
-            new Assert\Regex(GermanyTax::REGEX),
-            new Assert\Regex(GreeceTax::REGEX),
-            new Assert\Regex(ItalyTax::REGEX),
-        ])]
+        #[TaxNumber]
         public string $taxNumber,
 
         #[Assert\NotBlank]
-        #[Assert\Choice(choices: [
-            PaymentProcessorEnum::Paypal->value,
-            PaymentProcessorEnum::Stripe->value,
-        ])]
+        #[Assert\Type('string')]
+        #[PaymentProcessorCode]
         public string $paymentProcessor,
 
         #[Assert\Type('string')]

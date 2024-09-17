@@ -3,6 +3,8 @@
 namespace App\Factory;
 
 use App\Entity\Product;
+use App\Service\Price\Price;
+use App\Value\Money;
 use Zenstruck\Foundry\Persistence\PersistentProxyObjectFactory;
 
 /**
@@ -33,7 +35,7 @@ final class ProductFactory extends PersistentProxyObjectFactory
     {
         return [
             'name' => self::faker()->text(255),
-            'price' => self::faker()->randomNumber(),
+            'price' => new Price(new Money(self::faker()->randomNumber())),
         ];
     }
 

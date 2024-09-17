@@ -13,6 +13,18 @@
             "src/Repository/.gitignore"
         ]
     },
+    "doctrine/doctrine-fixtures-bundle": {
+        "version": "3.6",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "3.0",
+            "ref": "1f5514cfa15b947298df4d771e694e578d4c204d"
+        },
+        "files": [
+            "src/DataFixtures/AppFixtures.php"
+        ]
+    },
     "doctrine/doctrine-migrations-bundle": {
         "version": "3.3",
         "recipe": {
@@ -24,18 +36,6 @@
         "files": [
             "config/packages/doctrine_migrations.yaml",
             "migrations/.gitignore"
-        ]
-    },
-    "elao/enum": {
-        "version": "2.5",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "main",
-            "version": "1.7",
-            "ref": "d44e1c8caa4cabcab399724df787de558459dd83"
-        },
-        "files": [
-            "config/packages/elao_enum.yaml"
         ]
     },
     "symfony/console": {

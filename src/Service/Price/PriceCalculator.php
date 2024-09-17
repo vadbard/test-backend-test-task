@@ -16,6 +16,8 @@ class PriceCalculator
             $price->addCoupon($coupon);
         }
 
-        return $price->applyTax($tax);
+        $price->applyTax($tax);
+
+        return $price->calculatePrice();
     }
 }

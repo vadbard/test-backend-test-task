@@ -33,7 +33,7 @@ class PriceTest extends TestCase
         $coupon->method('getDiscountCalculator')
             ->willReturn($discountCalculator);
 
-        $price->addCoupon($coupon);
+        $price->addCoupon($coupon)->calculatePrice();
 
         $this->assertEquals($expectedMoney, $price->getMoney());
     }
@@ -48,7 +48,7 @@ class PriceTest extends TestCase
         $tax->method('calculateTax')
             ->willReturn($taxMoney);
 
-        $price->applyTax($tax);
+        $price->applyTax($tax)->calculatePrice();
 
         $this->assertEquals($expectedMoney, $price->getMoney());
     }
@@ -74,6 +74,7 @@ class PriceTest extends TestCase
 
         $price->addCoupon($coupon);
         $price->applyTax($tax);
+        $price->calculatePrice();
 
         $this->assertEquals($expectedMoney, $price->getMoney());
 

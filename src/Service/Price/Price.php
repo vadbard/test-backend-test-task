@@ -16,16 +16,11 @@ class Price
 
     public function __construct(private readonly Money $money)
     {
+        $this->resultMoney = $this->money;
     }
 
     public function getMoney(): Money
     {
-        $this->resultMoney = $this->money;
-
-        if (isset($this->coupon) || isset($this->tax)) {
-            $this->calculatePrice();
-        }
-
         return $this->resultMoney;
     }
 
@@ -43,10 +38,15 @@ class Price
         return $this;
     }
 
-    private function calculatePrice(): void
+    public function calculatePrice(): self
     {
+        $this->resultMoney = $this->money;
+
         $this->doApplyCoupon();
+
         $this->doApplyTax();
+
+        return $this;
     }
 
     private function doApplyCoupon(): void
